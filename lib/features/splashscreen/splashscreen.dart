@@ -1,5 +1,4 @@
-import 'package:dhmsmobileapp/app.dart';
-import 'package:dhmsmobileapp/features/pages/navigation.dart';
+import 'package:dhmsmobileapp/features/pages/bottomnavigation/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -43,14 +42,18 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(
               height: 50,
             ),
-            Text(
-              'Loading...',
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 16,
-                fontStyle: FontStyle.italic,
-              ),
+
+            Center(
+              child: CircularProgressIndicator(),
             ),
+            // Text(
+            //   'Loading...',
+            //   style: TextStyle(
+            //     fontFamily: 'Poppins',
+            //     fontSize: 16,
+            //     fontStyle: FontStyle.italic,
+            //   ),
+            // ),
           ],
         ),
       ),

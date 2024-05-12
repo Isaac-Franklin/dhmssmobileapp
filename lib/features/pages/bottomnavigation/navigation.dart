@@ -1,8 +1,8 @@
-import 'package:dhmsmobileapp/features/graphs/linechart.dart';
-import 'package:dhmsmobileapp/features/pages/dashboard.dart';
+import 'package:dhmsmobileapp/features/pages/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NavSection extends StatefulWidget {
   const NavSection({super.key});
@@ -20,8 +20,13 @@ class _NavSectionState extends State<NavSection> {
     color: Colors.black,
   );
   static const List<Widget> _widgetOptions = <Widget>[
-    Dashbaord(),
-    LineGraph(),
+    Dashboard(),
+    // NavigateToInventoryPage(),
+    // LineGraph(),
+    Text(
+      'Inventory',
+      style: optionStyle,
+    ),
     Text(
       'Maintenance',
       style: optionStyle,
