@@ -14,7 +14,7 @@ class StaffPageSuccessLoadingState extends StaffregState {
 }
 
 class StaffPageErrorLoadingState extends StaffregState {
-  late final List<User> userList;
+  late final List<UserData> userList;
 }
 
 class Navigatetohomepage extends StaffregState {}

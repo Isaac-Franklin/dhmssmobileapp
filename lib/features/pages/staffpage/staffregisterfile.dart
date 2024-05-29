@@ -1,8 +1,7 @@
 import 'package:dhmsmobileapp/features/pages/dashboard/dashboard.dart';
 import 'package:dhmsmobileapp/features/pages/staffpage/bloc/staffreg_bloc.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:dhmsmobileapp/service/apicall.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Staffregister extends StatefulWidget {
@@ -16,6 +15,7 @@ class _StaffregisterState extends State<Staffregister> {
   @override
   void initState() {
     staffregBloc.add(StartActionState());
+    getProfile();
     super.initState();
   }
 

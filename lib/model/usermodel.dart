@@ -1,19 +1,65 @@
-// import 'package:restapiproject/model/username_model.dart';
+// To parse this JSON data, do
+//
+//     final userData = userDataFromJson(jsonString);
 
-class User {
-  final String username;
-  final String email;
-  final String phone;
-  final String name;
+import 'dart:convert';
 
-  User({
-    required this.username,
+UserData userDataFromJson(dynamic str) => UserData.fromJson(json.decode(str));
+
+String userDataToJson(UserData data) => json.encode(data.toJson());
+
+class UserData {
+  dynamic companyname;
+  dynamic companyUniqueId;
+  dynamic email;
+  dynamic phone;
+  dynamic password;
+  dynamic repassword;
+  dynamic id;
+  dynamic city;
+  dynamic createdAt;
+  dynamic editedAt;
+  dynamic user;
+
+  UserData({
+    required this.companyname,
+    required this.companyUniqueId,
     required this.email,
     required this.phone,
-    required this.name,
+    required this.password,
+    required this.repassword,
+    required this.id,
+    required this.city,
+    required this.createdAt,
+    required this.editedAt,
+    required this.user,
   });
 
-  // String get fullname {
-  //   return '${name.title} ' '${name.firstname} ' '${name.lastname}';
-  // }
+  factory UserData.fromJson(Map<dynamic, dynamic> json) => UserData(
+        companyname: json["companyname"],
+        companyUniqueId: json["companyUniqueId"],
+        email: json["email"],
+        phone: json["phone"],
+        password: json["password"],
+        repassword: json["repassword"],
+        id: json["id"],
+        city: json["city"],
+        createdAt: json["created_at"],
+        editedAt: json["edited_at"],
+        user: json["user"],
+      );
+
+  Map<dynamic, dynamic> toJson() => {
+        "companyname": companyname,
+        "companyUniqueId": companyUniqueId,
+        "email": email,
+        "phone": phone,
+        "password": password,
+        "repassword": repassword,
+        "id": id,
+        "city": city,
+        "created_at": createdAt,
+        "edited_at": editedAt,
+        "user": user,
+      };
 }

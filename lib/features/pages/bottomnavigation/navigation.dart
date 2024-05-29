@@ -1,8 +1,7 @@
 import 'package:dhmsmobileapp/features/pages/dashboard/dashboard.dart';
+import 'package:dhmsmobileapp/features/pages/profile/profilepage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:line_icons/line_icons.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NavSection extends StatefulWidget {
   const NavSection({super.key});
@@ -46,12 +45,12 @@ class _NavSectionState extends State<NavSection> {
           //   border: Border(bottom: ),
           // ),
           padding: const EdgeInsets.all(0),
-          child: const Column(
+          child: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
+                  const Row(
                     children: [
                       Image(
                         image: AssetImage(
@@ -63,7 +62,7 @@ class _NavSectionState extends State<NavSection> {
                   ),
                   Row(
                     children: [
-                      IconButton(
+                      const IconButton(
                         onPressed: null,
                         icon: Icon(
                           Icons.notifications,
@@ -75,8 +74,17 @@ class _NavSectionState extends State<NavSection> {
                       //   width: 10,
                       // ),
                       IconButton(
-                        onPressed: null,
-                        icon: Icon(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const ProfilePage();
+                              },
+                            ),
+                          );
+                        },
+                        icon: const Icon(
                           Icons.menu,
                           size: 30,
                           color: Color.fromRGBO(52, 64, 84, 1),
@@ -86,10 +94,10 @@ class _NavSectionState extends State<NavSection> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
-              Divider(
+              const Divider(
                 color: Colors.grey,
                 height: 5,
               )
