@@ -55,31 +55,32 @@ class _ProfilePageState extends State<ProfilePage> {
                 itemCount: User.userdetails.length,
                 itemBuilder: (context, index) {
                   return Container(
+                      padding: const EdgeInsets.all(20),
                       child: Column(
-                    children: [
-                      detailsrow(
-                        DetailCaption: 'Company name',
-                        DetailAnswer: User.userdetails[index].companyname,
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      detailsrow(
-                        DetailCaption: 'Company email',
-                        DetailAnswer: User.userdetails[index].email,
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      detailsrow(
-                        DetailCaption: 'Company Phone Number',
-                        DetailAnswer: User.userdetails[index].phone,
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                    ],
-                  ));
+                        children: [
+                          detailsrow(
+                            DetailCaption: 'Company name',
+                            DetailAnswer: User.userdetails[index].companyname,
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          detailsrow(
+                            DetailCaption: 'Company email',
+                            DetailAnswer: User.userdetails[index].email,
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          detailsrow(
+                            DetailCaption: 'Company Phone Number',
+                            DetailAnswer: User.userdetails[index].phone,
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                        ],
+                      ));
                 },
               ),
             );

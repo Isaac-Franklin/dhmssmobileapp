@@ -1,6 +1,7 @@
-import 'package:dhmsmobileapp/features/pages/bottomnavigation/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import '../onboardingflow/onboard.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,14 +17,14 @@ class _SplashScreenState extends State<SplashScreen> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 10), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const NavSection()),
+        MaterialPageRoute(builder: (_) => const StartSliderSection()),
+        // MaterialPageRoute(builder: (_) => const NavSection()),
       );
     });
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: SystemUiOverlay.values);
@@ -31,29 +32,63 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image(
-              image: AssetImage('assets/images/itsalogo.png'),
+            const Image(
+              image: AssetImage('assets/images/dhms.png'),
             ),
-            SizedBox(
-              height: 50,
+            const SizedBox(
+              height: 5,
             ),
-
-            Center(
+            const Text(
+              'Device Health Management  System',
+              style: TextStyle(
+                fontFamily: 'Nunito',
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Center(
               child: CircularProgressIndicator(),
             ),
-            // Text(
-            //   'Loading...',
-            //   style: TextStyle(
-            //     fontFamily: 'Poppins',
-            //     fontSize: 16,
-            //     fontStyle: FontStyle.italic,
-            //   ),
-            // ),
+            const SizedBox(
+              height: 150,
+            ),
+            Positioned(
+              bottom: 5,
+              child: Container(
+                padding: const EdgeInsets.all(1),
+                child: Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Powered by',
+                        style: TextStyle(
+                          color: Colors.grey[350],
+                          fontSize: 16,
+                          fontFamily: 'Nunito',
+                        ),
+                      ),
+                      const Text(
+                        'IT Service Desk Africa',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 28,
+                          fontFamily: 'Nunito',
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

@@ -11,7 +11,7 @@ class detailsrow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
         Text(
           '$DetailCaption : ',
