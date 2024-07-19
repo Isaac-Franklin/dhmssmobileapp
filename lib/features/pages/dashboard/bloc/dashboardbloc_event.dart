@@ -3,10 +3,20 @@ part of 'dashboardbloc_bloc.dart';
 @immutable
 sealed class DashboardblocEvent {}
 
-abstract class DashboardActionableEvent extends DashboardblocEvent {}
+class DashboardActionableEvent extends DashboardblocEvent {}
 
-// upload csv file
-class AddNewStaffEvent extends DashboardActionableEvent {}
+class DashboardLoadingEvent extends DashboardblocEvent {}
 
-// Add new device
-class AddNewDeviceEvent extends DashboardActionableEvent {}
+class DashboardLoadingSuccessEvent extends DashboardblocEvent {}
+
+class DashboardLoadingErrorEvent extends DashboardblocEvent {}
+
+class DashboardScreenActiveEvent extends DashboardblocEvent {}
+
+class DevicesScreenActiveEvent extends DashboardblocEvent {}
+
+class ChatScreenActiveEvent extends DashboardblocEvent {}
+
+class MaintenanceScreenActiveEvent extends DashboardblocEvent {}
+
+class ReportScreenActiveEvent extends DashboardblocEvent {}

@@ -99,7 +99,7 @@ class _StudentLoginState extends State<StudentLogin> {
             );
           }
           if (state is StudentLoginSuccess) {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(
                 builder: (context) {

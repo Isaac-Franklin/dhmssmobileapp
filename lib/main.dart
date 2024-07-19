@@ -1,5 +1,6 @@
 import 'package:dhmsmobileapp/app.dart';
 import 'package:dhmsmobileapp/features/onboardingflow/bloc/slider_screen_bloc_bloc.dart';
+import 'package:dhmsmobileapp/features/pages/dashboard/bloc/dashboardbloc_bloc.dart';
 import 'package:dhmsmobileapp/features/splashscreen/splashscreen.dart';
 import 'package:dhmsmobileapp/features/studentsignup/bloc/studentonboarding_bloc.dart';
 import 'package:dhmsmobileapp/utils/api_client.dart';
@@ -14,6 +15,9 @@ void main() {
       ),
       BlocProvider(
         create: (context) => StudentonboardingBloc(ApiClient()),
+      ),
+      BlocProvider(
+        create: (context) => DashboardblocBloc(),
       ),
     ],
     child: const StartProject(),

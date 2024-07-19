@@ -8,8 +8,11 @@ sealed class DashboardblocActionState extends DashboardblocState {}
 
 final class DashboardblocInitial extends DashboardblocState {}
 
-// Action build states for the nav bar UI
-// abstract class NavBuildAction extends DashboardblocActionState {}
+class DashboardLoadingState extends DashboardblocState {}
+
+class DashboardLoadingSuccessState extends DashboardblocState {}
+
+class DashboardLoadingErrorState extends DashboardblocState {}
 
 // navigate to staff page
 class AddNewStaffState extends DashboardblocActionState {}
@@ -17,8 +20,12 @@ class AddNewStaffState extends DashboardblocActionState {}
 // Add new device
 class AddNewDeviceState extends DashboardblocActionState {}
 
-// // click on maintenance
-// class DisplayNotificationBar extends DashboardblocActionState {}
+class DashboardScreenActiveState extends DashboardblocActionState {}
 
-// // click on settings
-// class DisplayMenuBar extends DashboardblocActionState {}
+class DevicesScreenActiveState extends DashboardblocActionState {}
+
+class ChatScreenActiveState extends DashboardblocActionState {}
+
+class MaintenanceScreenActiveState extends DashboardblocActionState {}
+
+class ReportScreenActiveState extends DashboardblocActionState {}
